@@ -7,8 +7,9 @@ body{
 
 .display-media {
     display: flex;
-
     flex-wrap: wrap;
+    justify-content: space-between;
+    
 }
 
 .media-container {
@@ -37,10 +38,12 @@ h2{
 
 p {
     width: 80%;
+    text-align: center;
 }
 
 img{
-    height: 30rem;
+    max-height: 600px;
+    max-width: 45vw;
 }
 
 
@@ -63,12 +66,48 @@ button:hover{
 }
 
 label{
-    margin-top: 5em;
+    margin-top: 3em;
     margin-bottom: 1em;
     color: white;
+    font-size: large;
 }
 
 
 iframe{
     margin-top: 3em;
+}
+
+@media (max-width: 700px) {
+    .display-media {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .media-container{
+        width: 90vw;
+    }
+
+    img{
+        margin-left: auto;
+        margin-right: auto;
+        max-width:80vw;
+    }
+
+    .descricao{
+        width: 90vw;
+    }
+
+    h2{
+        margin-top: 0.5em;
+    }
+
+    label {
+        margin-top: 0.2em;
+        font-size: medium;
+        text-align: center;
+    }
+
+    input {
+        margin-bottom: 2em;
+    }
 }
