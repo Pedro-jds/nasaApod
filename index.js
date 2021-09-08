@@ -11,21 +11,30 @@ requisicao.send()
 requisicao.addEventListener('load',function(){
         if(requisicao.status==200 && requisicao.readyState==4){
                 const resposta = JSON.parse(requisicao.responseText)
-                        console.log(resposta)
                 if(resposta.media_type==="image"){
                 document.getElementById('titulo').textContent = resposta.title
                 document.getElementById('img-container').src = resposta.hdurl
                 document.getElementById("explicacao").textContent = resposta.explanation
                 document.getElementById('video-container').style.display='none'
+                document.getElementById('link').style.display='none'
                 document.getElementById('img-container').style.display=''
                 }
                 else if(resposta.media_type==="video"){
-                        console.log(resposta)
-                document.getElementById('titulo').textContent = resposta.title
-                document.getElementById('video-container').src = resposta.url
-                document.getElementById("explicacao").textContent = resposta.explanation
-                document.getElementById('video-container').style.display=''
-                document.getElementById('img-container').style.display='none'
+                        console.log(resposta.url)
+                        if(resposta.url.includes('html')==true){
+                                document.getElementById('video-container').style.display='none'
+                                document.getElementById('img-container').style.display='none'
+                                document.getElementById('link').style.display=''
+                                document.getElementById('link').href = resposta.url
+                        }
+                        else{
+                        document.getElementById('titulo').textContent = resposta.title
+                        document.getElementById('video-container').src = resposta.url
+                        document.getElementById("explicacao").textContent = resposta.explanation
+                        document.getElementById('video-container').style.display=''
+                        document.getElementById('img-container').style.display='none'
+                        document.getElementById('link').style.display='none'
+                        }
                 }
         }
 })

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,26 @@
     <script src="index.js" defer></script>
     <title>Fotos da Nasa</title>
 </head>
+
 <body>
     <div class="container">
-    
-    <h1>Fotos do dia Nasa</h1>
-    <h2 id="titulo"></h2>
-    <div class="img-div">
-    <img id="img-container"></img>
-    <iframe width="420" height="345" src="" id="video-container">
-    </iframe>
+        <h1>Fotos do dia Nasa</h1>
+        <div class="display-media">
+            <div class="media-container">
+                <img id="img-container"></img>
+                <iframe width="520" height="420" src="" id="video-container">
+                </iframe>
+                <a href="" id="link"><button> Visualização externa clique aqui</button></a>
+            </div>
+            <div class="descricao">
+                <h2 id="titulo"></h2>
+                <p id="explicacao"></p>
+                <label for="date">Escolha uma data anterior aqui para outras imagens e videos</label>
+                <input type="date" name="date" id="date" value="">
+            </div> 
+        </div>
+        
     </div>
-    <input type="date" name="" id="date" value="">
-    <p id="explicacao"></p>
-    
-    </div>
-
 </body>
+
 </html>
